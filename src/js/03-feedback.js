@@ -47,7 +47,6 @@ const submit = event => {
   console.log(obj);
   localStorage.removeItem('formData');
   event.currentTarget.reset();
-  l;
 };
 
 contactFormEl.addEventListener('submit', submit);
