@@ -22,8 +22,9 @@ fillContactForm(contactFormEl);
 const onContactFocusChange = throttle(event => {
   const { target } = event;
 
-  const formTarget = target.value;
   const formTargetName = target.name;
+
+  const formTarget = target.value;
 
   formData[formTargetName] = formTarget;
   localStorage.setItem('formData', JSON.stringify(formData));
@@ -37,17 +38,18 @@ const submit = event => {
   if (email.value === '' || message.value === '') {
     return alert('Please fill in all the fields!');
   }
+
   const obj = {
     email: contactFormEl.email.value,
     message: contactFormEl.message.value,
   };
 
   console.log(obj);
-  event.currentTarget.reset();
   localStorage.removeItem('formData');
+  event.currentTarget.reset();
+  l;
 };
 
 contactFormEl.addEventListener('submit', submit);
 
 contactFormEl.addEventListener('input', onContactFocusChange);
-/// ураааааа, я наконец сделал!!!!
